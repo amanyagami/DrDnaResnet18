@@ -1,0 +1,1 @@
+$env:PYTHONPATH = "C:\Users\2aman\Documents\reliability\MPS-aman"
