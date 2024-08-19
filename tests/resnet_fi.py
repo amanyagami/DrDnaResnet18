@@ -9,7 +9,8 @@ from src.utils.helpers import get_activation
 from data.data import testloader
 from src.utils.helpers import device
 from src.models.resnet import resnet18
-from src.utils.customFI_methods import random_neuron_single_bit_inj_ours
+from src.utils.customFI_methods import random_neuron_single_bit_inj_Aman
+from src.utils.customFI_methods import single_bit_flip_func
 from pytorchfi.neuron_error_models import (
     random_inj_per_layer,
     random_inj_per_layer_batched,
@@ -17,7 +18,6 @@ from pytorchfi.neuron_error_models import (
     random_neuron_inj_batched,
     random_neuron_single_bit_inj,
     random_neuron_single_bit_inj_batched,
-    single_bit_flip_func,
     random_batch_element,
     random_neuron_location,
     #declare_neuron_fault_injection
@@ -47,7 +47,7 @@ fi_layer=19
 fi_c = 0
 fi_h = 0
 fi_w = 0
-corrupt_model = random_neuron_single_bit_inj_ours(pfi, ranges, fi_layer, fi_c, fi_h, fi_w)
+corrupt_model = random_neuron_single_bit_inj_Aman(pfi, ranges, fi_layer, fi_c, fi_h, fi_w)
 corrupt_model.conv1.register_forward_hook(get_activation('conv1'))
 corrupt_model.bn1.register_forward_hook(get_activation('bn1'))
 corrupt_model.layer1[0].conv1.register_forward_hook(get_activation('layer1.0.conv1'))

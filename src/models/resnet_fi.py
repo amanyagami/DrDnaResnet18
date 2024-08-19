@@ -1,5 +1,5 @@
 
-from pytorchfi.neuron_error_models import single_bit_flip_func
+from src.utils.customFI_methods import single_bit_flip_func
 from models.resnet import resnet18
 from utils.helpers import get_activation
 from utils.customFI_methods import random_neuron_single_bit_inj_ours
