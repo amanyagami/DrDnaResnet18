@@ -16,9 +16,9 @@ What this repository contains, kept for reference:
 | `state_dicts/resnet18.pt` | CIFAR-10 ResNet-18 weights (the maintained repo uses the same file via Git LFS) |
 | `data/` | CIFAR-10 test data |
 
-Known issues carried over from these scripts (fixed in the maintained repository): histograms are
-computed with matplotlib in the compute path, forward hooks accumulate across calls, and tau3 does
-not follow the paper's definition.
+Known issues in these scripts (addressed in the maintained repository): histograms are computed
+with `plt.hist` (matplotlib in the compute path), and forward hooks are registered without ever
+being removed.
 
 Paper: Ma et al., *Dr. DNA: Combating Silent Data Corruptions in Deep Learning using Distribution of
 Neuron Activations*, ASPLOS '24, [doi:10.1145/3620666.3651349](https://doi.org/10.1145/3620666.3651349).
